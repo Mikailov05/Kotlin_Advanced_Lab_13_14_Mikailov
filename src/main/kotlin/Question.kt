@@ -4,7 +4,7 @@ data class  Question<T>(
     val difficulty: Difficulty
 )
 fun main() {
-    println("${Quiz.StudentProgress.answered} of ${StudentProgress.total} answered")
+    Quiz.printProgressBar()
 }
 enum class Difficult{
     EASY,
@@ -35,5 +35,16 @@ class Quiz{
         var total: Int = 10
         var answered:Int = 3
     }
+    val Quiz.StudentProgress.progressText: String
+        get() = "${answered} of ${total} answered"
 
+
+}
+fun Quiz.StudentProgress.printProgressBar(){
+
+
+    repeat(times = Quiz.answered) {print(" ")}
+    repeat(times = Quiz.total - Quiz.answered) {print(" ")}
+    println()
+    println(Quiz.progressText)
 }
