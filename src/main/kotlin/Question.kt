@@ -11,9 +11,15 @@ enum class Difficult{
     MEDIUM,
     HARD
 }
+interface ProgressPrintable{
+    val progressText: String
+    fun printProgressBar()
+}
 
 
-class Quiz{
+    class Quiz:ProgressPrintable{
+
+
     val question1 = Question<String>(
         questionText = "Речка спятила с ума – По домам пошла сама. ___",
         answer = "водопровод",
