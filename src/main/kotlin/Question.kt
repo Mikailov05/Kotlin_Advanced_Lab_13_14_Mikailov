@@ -5,6 +5,9 @@ data class  Question<T>(
 )
 fun main() {
     Quiz.printProgressBar()
+    val quiz = Quiz()
+    quiz.printQuiz()
+    val quiz = Quiz().apply { printQuiz() }
 }
 enum class Difficult{
     EASY,
@@ -44,6 +47,26 @@ interface ProgressPrintable{
     val Quiz.StudentProgress.progressText: String
         get() = "${answered} of ${total} answered"
 
+        fun printQuiz() {
+            question1.let {
+                println(question1.questionText)
+                println(question1.answer)
+                println(question1.difficulty)
+            }
+            println()
+            question2.let {
+                println(question2.questionText)
+                println(question2.answer)
+                println(question2.difficulty)
+            }
+            println()
+            question3.let {
+                println(question3.questionText)
+                println(question3.answer)
+                println(question3.difficulty)
+            }
+            println()
+        }
 
 }
 fun Quiz.StudentProgress.printProgressBar(){
