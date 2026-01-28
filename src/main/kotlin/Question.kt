@@ -4,6 +4,16 @@ data class  Question<T>(
     val difficulty: Difficulty
 )
 fun main() {
+    println("${Quiz.StudentProgress.answered} of ${StudentProgress.total} answered")
+}
+enum class Difficult{
+    EASY,
+    MEDIUM,
+    HARD
+}
+
+
+class Quiz{
     val question1 = Question<String>(
         questionText = "Речка спятила с ума – По домам пошла сама. ___",
         answer = "водопровод",
@@ -21,13 +31,9 @@ fun main() {
         answer = 28,
         Difficulty.HARD
     )
+    companion object StudentProgress{
+        var total: Int = 10
+        var answered:Int = 3
+    }
 
-    println(question1.answer)
-    println(question2.answer)
-    println(question3.answer)
-}
-enum class Difficult{
-    EASY,
-    MEDIUM,
-    HARD
 }
