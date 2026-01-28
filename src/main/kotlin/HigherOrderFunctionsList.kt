@@ -88,14 +88,27 @@ fun main() {
                         total + cookie.price
                     }
                     println("Total price: $${totalPrice}")
+                    fun main() {
+                        val alphabeticalMenu = cookies.sortedBy { it.name }
+                        println("Меню в алфавитном порядке:")
+                        alphabeticalMenu.forEach {
+                            println(it.name)
+                        }
+                    }
                 }
+
+
             }
+
 
         }
 
 
+
     }
+
 }
+
 
 
 
