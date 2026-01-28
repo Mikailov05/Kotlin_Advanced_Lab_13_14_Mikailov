@@ -17,7 +17,7 @@ fun main() {
 
 
 }
-val newSolarSystem = arrayOf(
+val newSolarSystem = mutableListOf(
     "Mercury",
     "Venus",
     "Earth",
@@ -28,3 +28,4 @@ val newSolarSystem = arrayOf(
     "Neptune",
     "Pluto"
 )
+
